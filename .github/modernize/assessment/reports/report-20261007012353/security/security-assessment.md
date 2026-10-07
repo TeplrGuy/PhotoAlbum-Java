@@ -1,0 +1,346 @@
+# Security Assessment Report
+
+**Generated:** 2026-10-07T01:37:04.192520Z
+
+## Scope and limitations
+
+- Static dependency advisory matches are not confirmed exploitable application vulnerabilities; prerequisites and reachability limitations appear in each finding.
+- The supplemental dependency scan resolved 101 distinct dependencies, including transitives and tests; the 36 retained high/critical advisory records concern 39 transitive package/version occurrences. There are no retained direct-dependency matches. This broader scan is separate from the core report configuration (direct scope).
+- Withdrawn, version-mismatched, low/medium, test-only, identifiable DoS/resource-exhaustion-only, rate-limiting-only, and development-only tooling advisories were excluded.
+- The six CWE categories assess 59 checklist items against current repository source, including pre-existing code. NOT_FOUND means no confirmed issue in this static assessment, not proof of safety. No exploit tests or deployment verification were performed.
+
+## Summary
+
+| Metric | Count |
+|---|---|
+| TotalFindings | 39 |
+| CveCount | 36 |
+| CweCount | 3 |
+| TotalRulesAssessed | 59 |
+| RulesPassed | 56 |
+
+### By Severity
+
+| Severity | Count |
+|---|---|
+| mandatory | 37 |
+| optional | 1 |
+| potential | 1 |
+
+## CVE Findings (Dependency Vulnerabilities)
+
+### CVE-2026-47884: Spring Framework Improper Path Limitation in XsltView
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2026-47884](https://github.com/advisories/GHSA-pc63-qcmh-9cmg). Severity: CRITICAL. Maven resolves org.springframework:spring-webmvc:5.3.31 through spring-boot-starter-web. The API lists this version in an affected range. No patched version was provided for the matching branch. Application exploitability was not established.
+
+### CVE-2026-65905: Apache Tomcat's DIGEST authenticator has an Authentication Bypass by Capture-replay vulnerability
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2026-65905](https://github.com/advisories/GHSA-9xv2-5v5q-p794). Severity: CRITICAL. Affected transitive dependency: org.apache.tomcat.embed:tomcat-embed-core:9.0.83 through spring-boot-starter-web. First patched version in the matching branch: 9.0.121. DIGEST authentication was not demonstrated as enabled.
+
+### CVE-2026-65182: Apache Tomcat has an Improper Access Control, Incorrect Authorization vulnerability
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2026-65182](https://github.com/advisories/GHSA-gcx9-497g-6cp6). Severity: CRITICAL. Affected transitive dependency: org.apache.tomcat.embed:tomcat-embed-core:9.0.83 through spring-boot-starter-web. First patched version in the matching branch: 9.0.121. Application exploitability was not established.
+
+### CVE-2026-68525: Apache Tomcat's FORM authentication process has an Incorrect Authorization vulnerability
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2026-68525](https://github.com/advisories/GHSA-h3x4-894j-xpx5). Severity: CRITICAL. Affected transitive dependency: org.apache.tomcat.embed:tomcat-embed-core:9.0.83 through spring-boot-starter-web. First patched version in the matching branch: 9.0.121. The inspected application configures Spring Security HTTP Basic, not demonstrated Tomcat FORM authentication.
+
+### CVE-2026-41845: Spring Framework Cross-site Scripting via JavaScriptUtils
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2026-41845](https://github.com/advisories/GHSA-3chg-m5w7-qfv5). Severity: HIGH. Affected transitive dependency: org.springframework:spring-webmvc:5.3.31 through spring-boot-starter-web. No patched version was provided for the matching branch. Use of the affected utility was not established.
+
+### CVE-2026-43512: Apache Tomcat - Digest authenticator will authenticate any unknown user
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2026-43512](https://github.com/advisories/GHSA-h6fc-48rj-7qqh). Severity: CRITICAL. Affected transitive dependency: org.apache.tomcat.embed:tomcat-embed-core:9.0.83 through spring-boot-starter-web. First patched version in the matching branch: 9.0.118. DIGEST authentication was not demonstrated as enabled.
+
+### CVE-2026-43515: Apache Tomcat - Security constraints not correctly applied
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2026-43515](https://github.com/advisories/GHSA-5m62-pw8w-7w9f). Severity: CRITICAL. Affected transitive dependency: org.apache.tomcat.embed:tomcat-embed-core:9.0.83 through spring-boot-starter-web. First patched version in the matching branch: 9.0.118. Application exploitability was not established.
+
+### CVE-2026-41293: Apache Tomcat - HTTP/2 request headers not validated
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2026-41293](https://github.com/advisories/GHSA-r29c-68gh-xp6x). Severity: CRITICAL. Affected transitive dependency: org.apache.tomcat.embed:tomcat-embed-core:9.0.83 through spring-boot-starter-web. First patched version in the matching branch: 9.0.118. HTTP/2 enablement was not established.
+
+### CVE-2026-42498: Apache Tomcat - WebSocket authentication header exposure
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2026-42498](https://github.com/advisories/GHSA-fv25-8xcx-gqjc). Severity: HIGH. Affected transitive dependency: org.apache.tomcat.embed:tomcat-embed-core:9.0.83 through spring-boot-starter-web. First patched version in the matching branch: 9.0.118. An affected WebSocket authentication flow was not established.
+
+### CVE-2026-41901: Sandboxed Thymeleaf expressions vulnerable to improper recognition of unauthorized syntax patterns
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:40
+
+[CVE-2026-41901](https://github.com/advisories/GHSA-c9ph-gxww-7744). Severity: CRITICAL. Affected transitive dependencies: org.thymeleaf:thymeleaf:3.0.15.RELEASE and org.thymeleaf:thymeleaf-spring5:3.0.15.RELEASE through spring-boot-starter-thymeleaf. First patched version listed: 3.1.5.RELEASE. Attacker-controlled template expressions were not established.
+
+### CVE-2026-40478: Improper neutralization of specific syntax patterns for unauthorized expressions in Thymeleaf
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:40
+
+[CVE-2026-40478](https://github.com/advisories/GHSA-xjw8-8c5c-9r79). Severity: CRITICAL. Affected transitive dependencies: org.thymeleaf:thymeleaf:3.0.15.RELEASE and org.thymeleaf:thymeleaf-spring5:3.0.15.RELEASE through spring-boot-starter-thymeleaf. First patched version listed: 3.1.4.RELEASE. Attacker-controlled template expressions were not established.
+
+### CVE-2026-40477: Improper restriction of the scope of accessible objects in Thymeleaf expressions
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:40
+
+[CVE-2026-40477](https://github.com/advisories/GHSA-r4v4-5mwr-2fwr). Severity: CRITICAL. Affected transitive dependencies: org.thymeleaf:thymeleaf:3.0.15.RELEASE and org.thymeleaf:thymeleaf-spring5:3.0.15.RELEASE through spring-boot-starter-thymeleaf. First patched version listed: 3.1.4.RELEASE. Attacker-controlled template expressions were not established.
+
+### CVE-2026-34483: Apache Tomcat has an Improper Encoding or Escaping of Output vulnerability in the JsonAccessLogValve
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2026-34483](https://github.com/advisories/GHSA-rv64-5gf8-9qq8). Severity: HIGH. Affected transitive dependency: org.apache.tomcat.embed:tomcat-embed-core:9.0.83 through spring-boot-starter-web. First patched version in the matching branch: 9.0.116. JsonAccessLogValve enablement was not established.
+
+### CVE-2026-34487: Apache Tomcat vulnerable to Insertion of Sensitive Information into Log File
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2026-34487](https://github.com/advisories/GHSA-x4m4-345f-5h5g). Severity: HIGH. Affected transitive dependency: org.apache.tomcat.embed:tomcat-embed-core:9.0.83 through spring-boot-starter-web. First patched version in the matching branch: 9.0.117. Application exploitability was not established.
+
+### CVE-2026-24880: Apache Tomcat has an HTTP Request/Response Smuggling vulnerability
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2026-24880](https://github.com/advisories/GHSA-563x-q5rq-57qp). Severity: HIGH. Affected transitive dependency: org.apache.tomcat.embed:tomcat-embed-core:9.0.83 through spring-boot-starter-web. First patched version in the matching branch: 9.0.116. Proxy/parser conditions were not established.
+
+### CVE-2026-24734: Apache Tomcat has an Improper Input Validation vulnerability
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2026-24734](https://github.com/advisories/GHSA-mgp5-rv84-w37q). Severity: HIGH. Affected transitive dependency: org.apache.tomcat.embed:tomcat-embed-core:9.0.83 through spring-boot-starter-web. First patched version in the matching branch: 9.0.115. Application exploitability was not established.
+
+### CVE-2025-55752: Apache Tomcat Vulnerable to Relative Path Traversal
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2025-55752](https://github.com/advisories/GHSA-wmwf-9ccg-fff5). Severity: HIGH. Affected transitive dependency: org.apache.tomcat.embed:tomcat-embed-core:9.0.83 through spring-boot-starter-web. First patched version in the matching branch: 9.0.109. Application exploitability was not established.
+
+### CVE-2025-24813: Apache Tomcat: Potential RCE and/or information disclosure and/or information corruption with partial PUT
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2025-24813](https://github.com/advisories/GHSA-83qj-6fr2-vhqg). Severity: CRITICAL. Affected transitive dependency: org.apache.tomcat.embed:tomcat-embed-core:9.0.83 through spring-boot-starter-web. First patched version in the matching branch: 9.0.99. Writable default-servlet and persistence prerequisites were not established.
+
+### CVE-2024-56337: Apache Tomcat Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2024-56337](https://github.com/advisories/GHSA-27hp-xhwr-wr2m). Severity: HIGH. Affected transitive dependency: org.apache.tomcat.embed:tomcat-embed-core:9.0.83 through spring-boot-starter-web. First patched version in the matching branch: 9.0.98. Writable-servlet and filesystem prerequisites were not established; consult advisory configuration requirements in addition to version upgrades.
+
+### CVE-2024-38819: Spring Framework Path Traversal vulnerability
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2024-38819](https://github.com/advisories/GHSA-g5vr-rgqm-vf78). Severity: HIGH. Affected transitive dependency: org.springframework:spring-webmvc:5.3.31 through spring-boot-starter-web. No patched version was provided for the matching branch. A vulnerable resource-routing configuration was not established.
+
+### CVE-2024-50379: Apache Tomcat Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2024-50379](https://github.com/advisories/GHSA-5j33-cvvr-w245). Severity: HIGH. Affected transitive dependency: org.apache.tomcat.embed:tomcat-embed-core:9.0.83 through spring-boot-starter-web. First patched version in the matching branch: 9.0.98. Writable-servlet and case-insensitive filesystem prerequisites were not established.
+
+### CVE-2024-38816: Path traversal vulnerability in functional web frameworks
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2024-38816](https://github.com/advisories/GHSA-cx7f-g6mp-7hqm). Severity: HIGH. Affected transitive dependency: org.springframework:spring-webmvc:5.3.31 through spring-boot-starter-web. No patched version was provided for the matching branch. The inspected application uses annotated MVC controllers; vulnerable functional resource routing was not established.
+
+### CVE-2024-22262: Spring Framework URL Parsing with Host Validation
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2024-22262](https://github.com/advisories/GHSA-2wrp-6fg6-hmc5). Severity: HIGH. Affected transitive dependency: org.springframework:spring-web:5.3.31 through spring-boot-starter-web. First patched version in the matching branch: 5.3.34. An affected attacker-controlled URL validation flow was not established.
+
+### CVE-2024-22259: Spring Framework URL Parsing with Host Validation Vulnerability
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2024-22259](https://github.com/advisories/GHSA-hgjh-9rj2-g67j). Severity: HIGH. Affected transitive dependency: org.springframework:spring-web:5.3.31 through spring-boot-starter-web. First patched version in the matching branch: 5.3.33. An affected attacker-controlled URL validation flow was not established.
+
+### CVE-2024-22243: Spring Web vulnerable to Open Redirect or Server Side Request Forgery
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2024-22243](https://github.com/advisories/GHSA-ccgv-vj62-xf9h). Severity: HIGH. Affected transitive dependency: org.springframework:spring-web:5.3.31 through spring-boot-starter-web. First patched version in the matching branch: 5.3.32. An affected attacker-controlled URL validation flow was not established.
+
+### CVE-2022-1471: SnakeYaml Constructor Deserialization Remote Code Execution
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2022-1471](https://github.com/advisories/GHSA-mjmj-j48q-9wg2). Severity: HIGH. Affected transitive dependency: org.yaml:snakeyaml:1.30 through spring-boot-starter-web. First patched version listed: 2.0. Unsafe parsing of attacker-controlled YAML was not established. Upgrade compatibility must be assessed with the Spring Boot dependency platform.
+
+### CVE-2016-1000027: Pivotal Spring Framework contains unsafe Java deserialization methods
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:34
+
+[CVE-2016-1000027](https://github.com/advisories/GHSA-4wrc-f8pq-fpqp). Severity: CRITICAL. Affected transitive dependency: org.springframework:spring-web:5.3.31 through spring-boot-starter-web. First patched version listed: 6.0.0. An affected HTTP Invoker deserialization endpoint was not established. A platform upgrade requires Java and Spring compatibility planning.
+
+### CVE-2026-22732: Spring Security HTTP Headers Are not Written Under Some Conditions
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:65
+
+[CVE-2026-22732](https://github.com/advisories/GHSA-mf92-479x-3373). Severity: CRITICAL. Affected transitive dependency: org.springframework.security:spring-security-web:5.7.11 through spring-boot-starter-security. No patched version was provided for the matching branch. The advisory-specific triggering conditions were not established.
+
+### CVE-2025-22228: Spring Security Does Not Enforce Password Length
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:65
+
+[CVE-2025-22228](https://github.com/advisories/GHSA-mg83-c7gq-rv5c). Severity: HIGH. Affected transitive dependency: org.springframework.security:spring-security-crypto:5.7.11 through spring-boot-starter-security. First patched version in the matching branch: 5.7.16. BCryptPasswordEncoder is used in SecurityConfig.passwordEncoder at line 30, but actual credential length and exploit prerequisites were not assessed.
+
+### CVE-2024-38821: Spring Security vulnerable to Authorization Bypass of Static Resources in WebFlux Applications
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:65
+
+[CVE-2024-38821](https://github.com/advisories/GHSA-c4q5-6c82-3qpw). Severity: CRITICAL. Affected transitive dependency: org.springframework.security:spring-security-web:5.7.11 through spring-boot-starter-security. First patched version in the matching branch: 5.7.13. This repository uses servlet MVC; affected WebFlux enablement was not established.
+
+### CVE-2024-22257: Erroneous authentication pass in Spring Security
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:65
+
+[CVE-2024-22257](https://github.com/advisories/GHSA-f3jh-qvm4-mg39). Severity: HIGH. Affected transitive dependency: org.springframework.security:spring-security-core:5.7.11 through spring-boot-starter-security. First patched version in the matching branch: 5.7.12. Application exploitability was not established.
+
+### CVE-2026-54513: jackson-databind has an array subtype allowlist bypass in BasicPolymorphicTypeValidator (allowIfSubTypeIsArray)
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:78
+
+[CVE-2026-54513](https://github.com/advisories/GHSA-rmj7-2vxq-3g9f). Severity: HIGH. Affected transitive dependency: com.fasterxml.jackson.core:jackson-databind:2.13.5 through spring-boot-starter-json. First patched version listed: 2.18.8. Affected polymorphic deserialization configuration was not established.
+
+### CVE-2026-54512: jackson-databind has a PolymorphicTypeValidator bypass via generic type parameters that allows arbitrary class instantiation
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:78
+
+[CVE-2026-54512](https://github.com/advisories/GHSA-j3rv-43j4-c7qm). Severity: HIGH. Affected transitive dependency: com.fasterxml.jackson.core:jackson-databind:2.13.5 through spring-boot-starter-json. First patched version listed: 2.18.8. Affected polymorphic deserialization configuration was not established.
+
+### CVE-2026-40973: Spring Boot accepts predictable temp directory without ownership verification
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:98
+
+[CVE-2026-40973](https://github.com/advisories/GHSA-wwpq-f5c3-7hvx). Severity: HIGH. Maven's selected dependency tree resolves org.springframework.boot:spring-boot:2.7.18 through spring-boot-devtools. No patched version was provided for the matching branch. Local attacker and filesystem prerequisites were not established.
+
+### CVE-2025-41249: Spring Framework annotation detection mechanism may result in improper authorization
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:84
+
+[CVE-2025-41249](https://github.com/advisories/GHSA-jmp9-x22r-554x). Severity: HIGH. Maven's selected tree resolves compile-scoped org.springframework:spring-core:5.3.31 through spring-boot-starter-test. No patched version was provided for the matching branch. Affected annotation-based authorization patterns were not established.
+
+### CVE-2025-22235: Spring Boot EndpointRequest.to() creates wrong matcher if actuator endpoint is not exposed
+- **Category:** CVE
+- **Severity:** mandatory
+- **Story Points:** 1
+- **Files:** pom.xml:98
+
+[CVE-2025-22235](https://github.com/advisories/GHSA-rc42-6c7j-7h5r). Severity: HIGH. Maven's selected dependency tree resolves org.springframework.boot:spring-boot:2.7.18 through spring-boot-devtools. No patched version was provided for the matching branch. EndpointRequest.to() usage and an affected actuator configuration were not established.
+
+
+## CWE Findings (Code-Level Vulnerabilities)
+
+### CWE-778: Insufficient Logging
+- **Category:** Credentials & Secrets
+- **Severity:** potential
+- **Story Points:** 3
+- **Files:** src/main/java/com/photoalbum/controller/DetailController.java, src/main/java/com/photoalbum/service/impl/PhotoServiceImpl.java, src/main/java/com/photoalbum/config/SecurityConfig.java
+
+Deletion is an authenticated, security-critical state change (SecurityConfig.securityFilterChain lines 54-56). DetailController.deletePhoto lines 64-76 records only the photo ID and outcome (line 69), and PhotoServiceImpl.deletePhoto lines 199-213 likewise logs only the photo ID. Neither method obtains or records the authenticated principal. Successful deletion audit records therefore omit the actor identity, preventing attribution of destructive actions to an authenticated account.
+
+### CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+- **Category:** Injection Attacks
+- **Severity:** optional
+- **Story Points:** 8
+- **Files:** src/main/resources/static/js/upload.js
+
+handleFiles interpolates attacker-controlled file.name into errors (lines 71-82); showErrors inserts these strings as HTML without escaping at lines 215-218. A filename containing an HTML element/event handler is interpreted as DOM markup rather than text when a user selects or drops the crafted file. This client-side XSS requires victim interaction with a maliciously named file; it is not evidence of anonymous remote stored XSS.
+
+### CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+- **Category:** Injection Attacks
+- **Severity:** mandatory
+- **Story Points:** 13
+- **Files:** oracle-init/create-user.sh
+
+Oracle initialization interpolates APP_USER_UPPER directly into a quoted SQL literal (line 27) and APP_USER_PASSWORD into dynamic DDL within a PL/SQL string (line 30), with no escaping or identifier validation. Quotes in externally supplied environment values can escape the intended SQL string and change the PL/SQL executed as SYSTEM through sqlplus (line 22). This is startup/configuration-origin SQL injection, requiring control of those environment inputs; no HTTP-to-SQL injection was found.
+

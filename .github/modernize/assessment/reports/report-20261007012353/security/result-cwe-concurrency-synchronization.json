@@ -1,0 +1,101 @@
+{
+  "input_name": "CWE - Concurrency & Synchronization",
+  "analysis_method": "LLM",
+  "status": "success",
+  "result": {
+    "finding": "Assessed 6 CWE rules in Concurrency & Synchronization: 0 FOUND, 6 NOT_FOUND",
+    "confidence": "high",
+    "evidence": [
+      "Reviewed all Java application bean fields, static state, request-local mutation, database transactions and JavaScript async upload handlers; searched threading, scheduling, locks, volatile and synchronization constructs.",
+      "Controllers hold final service references; HomeController response collections are request-local (lines 58-60). PhotoServiceImpl fields (lines 32-47) are final configuration/repository references and allowedMimeTypes is read-only after construction. UploadResult, Photo and ImageReader mutations operate on method-local/request-specific objects.",
+      "PhotoServiceImpl is @Transactional (lines 28-29); shared persistent data is handled through Spring Data JPA and database transactions. No application shared mutable cache, singleton scratch buffer or manual lock implementation was found."
+    ],
+    "values": [
+      {
+        "id": "CWE-543",
+        "name": "Use of Singleton Pattern Without Synchronization in a Multithreaded Context",
+        "status": "NOT_FOUND",
+        "category": "Concurrency & Synchronization",
+        "severity": "potential",
+        "storyPoint": 5,
+        "description": "The product uses the singleton pattern when creating a resource within a multithreaded environment.",
+        "evidence": {
+          "files": [],
+          "explanation": ""
+        }
+      },
+      {
+        "id": "CWE-567",
+        "name": "Unsynchronized Access to Shared Data in a Multithreaded Context",
+        "status": "NOT_FOUND",
+        "category": "Concurrency & Synchronization",
+        "severity": "potential",
+        "storyPoint": 5,
+        "description": "The product does not properly synchronize shared data, such as static variables across threads, which can lead to undefined behavior and unpredictable data changes.",
+        "evidence": {
+          "files": [],
+          "explanation": ""
+        }
+      },
+      {
+        "id": "CWE-662",
+        "name": "Improper Synchronization",
+        "status": "NOT_FOUND",
+        "category": "Concurrency & Synchronization",
+        "severity": "potential",
+        "storyPoint": 8,
+        "description": "The product utilizes multiple threads or processes to allow temporary access to a shared resource that can only be exclusive to one process at a time, but it does not properly synchronize these actions, which might cause simultaneous accesses of this resource by multiple threads or processes.",
+        "evidence": {
+          "files": [],
+          "explanation": ""
+        }
+      },
+      {
+        "id": "CWE-667",
+        "name": "Improper Locking",
+        "status": "NOT_FOUND",
+        "category": "Concurrency & Synchronization",
+        "severity": "potential",
+        "storyPoint": 8,
+        "description": "The product does not properly acquire or release a lock on a resource, leading to unexpected resource state changes and behaviors.",
+        "evidence": {
+          "files": [],
+          "explanation": ""
+        }
+      },
+      {
+        "id": "CWE-820",
+        "name": "Missing Synchronization",
+        "status": "NOT_FOUND",
+        "category": "Concurrency & Synchronization",
+        "severity": "potential",
+        "storyPoint": 8,
+        "description": "The product utilizes a shared resource in a concurrent manner but does not attempt to synchronize access to the resource.",
+        "evidence": {
+          "files": [],
+          "explanation": ""
+        }
+      },
+      {
+        "id": "CWE-821",
+        "name": "Incorrect Synchronization",
+        "status": "NOT_FOUND",
+        "category": "Concurrency & Synchronization",
+        "severity": "potential",
+        "storyPoint": 8,
+        "description": "The product utilizes a shared resource in a concurrent manner, but it does not correctly synchronize access to the resource.",
+        "evidence": {
+          "files": [],
+          "explanation": ""
+        }
+      }
+    ],
+    "notes": [
+      "Current repository-wide static analysis includes pre-existing code; tests, generated code and .github/agents excluded. No load/race tests or database isolation instrumentation performed; framework thread-safety implementations not re-audited.",
+      "Spring singleton beans do not alone establish CWE-543 when no unsafe shared mutable state is identified. A find-then-delete sequence is not alone proof of a security-impacting synchronization flaw; no such confirmed impact was established here.",
+      "JavaScript asynchronous feedback overlap is not a multithreaded shared-data vulnerability. No DoS/rate-limit observations included."
+    ]
+  },
+  "execution_time_seconds": 0,
+  "timestamp": "2026-10-07T01:36:24.220099+00:00"
+}
